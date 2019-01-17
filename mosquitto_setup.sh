@@ -6,7 +6,9 @@ WARN="\033[0;33m"
 SUCCESS="\033[0;32m"
 DEFAULT="\033[0;37m"
 reset=`tput sgr0`
-
+if ! [ -x "$(command -v docker)" ]; then
+  `curl -s https://raw.githubusercontent.com/MuzammilM/docker-install/master/docker-install.sh | sudo bash -s`
+then
 read -rp"Enter username: " -e USERNAME
 sudo ufw allow 1883
 sudo ufw allow 9001
