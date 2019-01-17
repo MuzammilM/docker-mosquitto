@@ -8,6 +8,7 @@ DEFAULT="\033[0;37m"
 reset=`tput sgr0`
 if ! [ -x "$(command -v docker)" ]; 
 then
+  echo -e "${ERROR}docker not found ; downloading and installing docker-ce=17"
   `curl -s https://raw.githubusercontent.com/MuzammilM/docker-install/master/docker-install.sh | sudo bash -s`
 fi
 read -rp"Enter username: " -e USERNAME
